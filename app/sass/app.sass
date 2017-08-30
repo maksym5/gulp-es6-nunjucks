@@ -1,0 +1,23 @@
+@import "_others/_all"
+@import "_mixins/_all"
+// @import "_generated/_sprite"
+@import "_generated/_svgsprite"
+
+// +font-face("MontserratBold", "Montserrat/MontserratBold/Montserrat-Bold")
+
+body
+	min-width: 320px
+	position: relative
+	font-family: sans-serif
+	overflow-x: hidden
+	opacity: 1
+
+
+.container
+	max-width: $container-width +px
+	margin: 0 auto
+	position: relative
+	+r($container-width)
+		margin: 0 20px
+
+@import "_blocks/_all"
