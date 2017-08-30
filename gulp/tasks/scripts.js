@@ -14,7 +14,7 @@ var eslint  = require('gulp-eslint');
 
 
 gulp.task('eslint', () => {
-  return gulp.src([config.src.js + 'common.js', config.src.js + 'libs.js'])
+  return gulp.src([config.src.js + '/common.js', config.src.js + '/libs.js'])
     .pipe(eslint({
       fix: true,
       rules: {
