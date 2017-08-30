@@ -11,8 +11,13 @@ gulp.task('lint:html', function() {
 });
 
 gulp.task('lint:sass', function() {
-  return gulp.src(config.sass + '/**/*.s+(a|c)ss')
-    .pipe(sassLint())
+  return gulp.src([config.src.sass + '/app.sass', config.src.sass + '/_blocks/*.{sass,scss}'])
+    .pipe(sassLint({
+      options: {
+        configFile: '.sass-lint.yml',
+        formatter: 'checkstyle'
+      }
+    }))
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError())
 });
